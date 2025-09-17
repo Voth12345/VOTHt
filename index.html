@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUTH TOPUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- Google Font --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* --- Basic Page Setup --- */
+        body {
+            margin: 0;
+            background-color: #0e2b7a; /* Dark background for the entire page */
+            font-family: 'Poppins', sans-serif;
+            color: #f3f4f6;
+        }
+
+        /* --- Main Centered Container --- */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto; /* Centers the content */
+            padding: 0 20px;
+        }
+
+/* --- SECTION 1: HEADER (UPDATED) --- */
+.site-header {
+    /* Half red (top) and half white (bottom) background */
+    background: linear-gradient(to bottom, #dc2626 50%, #ffffff 50%);
+    padding: 15px 0;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #111827; /* Changed to black for visibility */
+    font-size: 24px;
+    font-weight: 700;
+}
+.logo-icon {
+    width: 48px;
+    height: auto;
+}
+.header-smiley {
+    width: 32px;
+}
+        /* --- SECTION 2: HERO BANNER --- */
+        .hero-section {
+            margin-top: 20px;
+        }
+        .hero-banner-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* --- SECTION 3: GAME SELECTION --- */
+        .game-selection-section {
+            padding: 40px 0;
+            display: flex;
+            justify-content: center; /* Centers the game grid container */
+        }
+        .game-selection-container {
+            width: 100%;
+            max-width: 400px; /* Or adjust to fit your design */
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #0e56f3;
+            margin-bottom: 24px;
+        }
+        .title-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .game-card {
+            background-color: #e2e2e2;
+            border: 2px solid #fa0808;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+        }
+        .game-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+        .game-title {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+        }
+        .topup-button {
+            display: block;
+            background-color: #0da3e9;
+            color: #111827;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+/* --- SECTION 4: FOOTER (UPDATED) --- */
+.site-footer {
+    /* Half white and half red background like the Polish flag */
+    background: linear-gradient(to bottom, #ffffff 50%, #eb0c0c 50%);
+    padding: 40px 20px;
+    font-size: 14px;
+}
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 40px;
+    padding-bottom: 30px;
+}
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #111827; /* Dark text for visibility on white */
+}
+.footer-column p {
+    line-height: 1.7;
+    margin: 0;
+    color: #4b5563; /* Grey text for visibility on white */
+}
+.footer-column a {
+    color: #111827; /* Dark text for visibility on white */
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #d1d5db;
+}
+.footer-column a:hover {
+    color: #000000;
+}
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #eb0c0c;
+    border: 2px solid #eb0c0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white; /* White icon for visibility on red */
+}
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.payment-logo {
+    background-color: #dc2626;
+    color: white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+}
+.connect-icon {
+    font-size: 24px;
+    color: #111827;
+}
+.footer-middle {
+    padding: 20px 0;
+}
+.support-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white line */
+    font-size: 13px;
+    color: #ffffff; /* White text for visibility on red */
+}
+.footer-bottom a {
+    color: #ffffff; /* White text for visibility on red */
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- Responsive Design for smaller screens --- */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+        /* --- Responsive Design for smaller screens --- */
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="page-container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="https://i.ibb.co/bJCmwK0/meng-topup-logo.png" alt="Meng Topup Logo" class="logo-icon">
+                    <span>VUTH TOPUP</span>
+                </a>
+                <img src="https://i.ibb.co/3k9n7hR/smiley.png" alt="Smiley Face" class="header-smiley">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section page-container">
+            <img src="https://i.ibb.co/k2xQh4s/mengtopup-banner.jpg" alt="Welcome to Mengtopup Banner" class="hero-banner-image">
+        </section>
+        
+        <section class="game-selection-section">
+            <div class="game-selection-container">
+                <h2 class="section-title">
+                    <img src="https://i.ibb.co/L9s741z/game-coin.png" alt="Game Icon" class="title-icon">
+                    ជ្រើសរើសហ្គេម
+                </h2>
+                <div class="game-grid">
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/GdvPzQW/mobile-legends.jpg" alt="Mobile Legend" class="game-image">
+                        <h3 class="game-title">MOBILE LEGEND</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/3cYBvs1/ff-weekly-pass.png" alt="Free Fire" class="game-image">
+                        <h3 class="game-title">FREE FIRE</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/Q8Q49bK/pubg-mobile.jpg" alt="PUBG Mobile" class="game-image">
+                        <h3 class="game-title">PUBG MOBILE</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/Yc53zxc/honor-of-kings.jpg" alt="Honor of Kings" class="game-image">
+                        <h3 class="game-title">HONOR OF KINGS</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/TqYgM2H/blood-strike.jpg" alt="Blood Strike" class="game-image">
+                        <h3 class="game-title">BLOOD STRIKE</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                    <a href="#" class="game-card">
+                        <img src="https://i.ibb.co/tZ5P088/magic-chess.jpg" alt="Magic Chess" class="game-image">
+                        <h3 class="game-title">MAGIC CHESS</h3>
+                        <span class="topup-button">TOPUP</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container page-container">
+            <div class="footer-top">
+                <div class="footer-column about-section">
+                    <div class="footer-logo">🐰</div>
+                    <p>
+                        Experience seamless online game top-up services at sohinfeilxstore, offering unbeatable deals on popular titles like Mobile Legends, Free Fire, and more. Enjoy fast, secure, and reliable transactions.
+                    </p>
+                </div>
+                <div class="footer-column links-section">
+                    <div class="contact-info">
+                        <h3>Contact Us</h3>
+                        <p>For inquiries, please contact us via Telegram (Chat only).<br><a href="#">Visit our support</a></p>
+                    </div>
+                    <div class="other-links">
+                        <div style="float: left; margin-right: 60px;">
+                           <h3>Connect With Us</h3>
+                           <i class="fas fa-comment-dots connect-icon"></i>
+                        </div>
+                        <div>
+                           <h3>Legal</h3>
+                           <a href="#">View Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column payment-section">
+                    <h3>We Accept</h3>
+                    <div class="payment-logo">KHQR</div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <input type="text" class="support-input" placeholder="ber jhg oy ke sl yg vinh dak weekly oy ke muy tv jhg tver kanha sohin ot">
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 VUTHSTORE. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
